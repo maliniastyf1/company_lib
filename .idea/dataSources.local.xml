@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - postgres@localhost" uuid="8564a0a9-d2d8-474b-9173-f90b91acc496">
+      <secret-storage>master_key</secret-storage>
+      <user-name>adammalinowski</user-name>
+    </data-source>
+  </component>
+</project>

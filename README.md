@@ -9,7 +9,7 @@
 ## Features:
 - Login using google account -> omniauth-google-oauth2
 - lending history
--
+
 
 ## UI:
 Bootstrap -> formatting
