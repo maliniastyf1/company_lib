@@ -1,1 +1,26 @@
-= @book.inspect
+%h1 Book Details
+%table.table
+  %thead
+    %tr
+      %th
+        \#
+      %th
+        Author
+      %th
+        Title
+      %th
+        Description
+      %th
+        Status
+  %tbody
+  %tr
+    %td
+      = @book.id
+    %td
+      = @book.author
+    %td
+      = @book.title
+    %td
+      = @book.description
+    %td
+      = @book.status_info
