@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show]
+  before_action :set_book, only: [:show, :edit, :update]
   def index
     @books = Book.all
   end
@@ -15,6 +15,17 @@ class BooksController < ApplicationController
       redirect_to @book, notice: "Your book was added successfully"
     else
       render 'new'
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @book.update(book_params)
+      redirect_to @book, notice: "Your book was updated successfully"
+    else
+      render 'edit'
     end
   end
 

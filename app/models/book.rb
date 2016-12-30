@@ -5,7 +5,7 @@ class Book < ApplicationRecord
   validates_presence_of :author, :title, :description
 
   def status_info
-    status == "f" ? "Available" : "Rent"
+    status == false ? "Available" : "Rent"
   end
 
 end

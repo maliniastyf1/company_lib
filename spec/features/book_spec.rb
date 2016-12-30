@@ -2,8 +2,8 @@
 
   describe 'navigate' do
     before do
-      user = User.create(email: "adam@test.com", password: "qwerty", password_confirmation: "qwerty", first_name: "Adam", last_name: "Malyn")
-      login_as(user, :scope => :user)
+      @user = FactoryGirl.create(:user)
+      login_as(@user, :scope => :user)
     end
     describe 'index' do
       before do
@@ -22,7 +22,6 @@
         visit books_path
 
         expect(page).to have_content(/Criminal1|Criminal2/)
-
       end
     end
 
@@ -51,6 +50,30 @@
         click_on "Save"
 
         expect(User.last.books.last.description).to eq("Book Association")
+      end
+    end
+
+    describe 'edit' do
+      before do
+        @book = Book.create(author: "Head1", title: "Ride1", description: "Criminal1")
+      end
+      it 'can be reached by clicking edit on index page' do
+        visit books_path
+
+        click_link("edit_#{@book.id}")
+        expect(page.status_code).to eq(200)
+      end
+
+      it 'can be edited' do
+       visit edit_book_path(@book)
+
+       fill_in 'book[author]', with: "Adam"
+       fill_in 'book[title]', with: "Lord"
+       fill_in 'book[description]', with: "Edited Lord is fantasy book"
+       click_on "Save"
+
+       expect(page).to have_content("Edited Lord is fantasy book")
+
       end
     end
   end

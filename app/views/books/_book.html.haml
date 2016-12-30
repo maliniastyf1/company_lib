@@ -9,3 +9,5 @@
     = truncate(book.description)
   %td
     = book.status_info
+  %td
+    = link_to 'Edit', edit_book_path(book), id:"edit_#{book.id}"

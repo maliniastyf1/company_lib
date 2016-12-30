@@ -18,7 +18,7 @@ RSpec.describe Book, type: :model do
   end
 
   describe 'custom status methods' do
-    it 'has status method that display if book is availabe' do
+    it 'check if book status is available when book is to rent' do
       expect(@book.status_info).to eq("Available")
     end
   end
