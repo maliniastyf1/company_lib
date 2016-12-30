@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Book, type: :model do
+  before do
+    @book = Book.create(author: "Head", title: "Ride", description: "Criminal")
+  end
   describe 'creation' do
-    before do
-      @book = Book.create(author: "Head", title: "Ride", description: "Criminal")
-    end
     it 'can be created' do
       expect(@book).to be_valid
     end
@@ -15,6 +15,11 @@ RSpec.describe Book, type: :model do
       @book.description = nil
       expect(@book).to_not be_valid
     end
+  end
 
+  describe 'custom status methods' do
+    it 'has status method that display if book is availabe' do
+      expect(@book.status_info).to eq("Available")
+    end
   end
 end
