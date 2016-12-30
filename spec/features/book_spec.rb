@@ -25,6 +25,18 @@
       end
     end
 
+    describe 'new' do
+      it 'has a link from homepage' do
+        visit root_path
+
+        click_link("new_book_from_nav")
+        expect(page.status_code).to eq(200)
+
+      end
+
+    end
+
+
     describe 'creation' do
       before do
         visit new_book_path
@@ -75,5 +87,18 @@
        expect(page).to have_content("Edited Lord is fantasy book")
 
       end
+    end
+
+    describe 'delete' do
+      before do
+        @book = Book.create(author: "Head1", title: "Ride1", description: "Criminal1")
+      end
+      it 'can be reached by clicking delete on index page' do
+        visit books_path
+
+        click_link("edit_#{@book.id}")
+        expect(page.status_code).to eq(200)
+      end
+
     end
   end
