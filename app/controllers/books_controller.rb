@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :edit, :update]
+  before_action :set_book, only: [:show, :edit, :update, :destroy]
   def index
     @books = Book.all
   end
@@ -30,6 +30,11 @@ class BooksController < ApplicationController
   end
 
   def show
+  end
+
+  def destroy
+    @book.delete
+    redirect_to books_path, notice: "Your book was deleted successfully"
   end
 
   private

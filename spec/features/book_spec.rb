@@ -93,10 +93,10 @@
       before do
         @book = Book.create(author: "Head1", title: "Ride1", description: "Criminal1")
       end
-      it 'can be reached by clicking delete on index page' do
+      it 'can be deleted' do
         visit books_path
 
-        click_link("edit_#{@book.id}")
+        click_link("delete_book_#{@book.id}_from_index")
         expect(page.status_code).to eq(200)
       end
 

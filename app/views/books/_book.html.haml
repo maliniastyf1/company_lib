@@ -11,3 +11,5 @@
     = book.status_info
   %td
     = link_to 'Edit', edit_book_path(book), id:"edit_#{book.id}"
+  %td
+    = link_to 'Delete', book_path(book), method: :delete ,id: "delete_book_#{book.id}_from_index", data: { confirm: 'Are you sure?'}
