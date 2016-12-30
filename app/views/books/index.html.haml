@@ -14,15 +14,4 @@
       %th
         Status
   %tbody
-    - @books.each do |book|
-      %tr
-        %td
-          = book.id
-        %td
-          = book.author
-        %td
-          = book.title
-        %td
-          = truncate(book.description)
-        %td
-          = book.status
+    = render @books
