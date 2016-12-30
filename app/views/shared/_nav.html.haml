@@ -2,12 +2,12 @@
   %h1 Library
 
 %ul.custom-nav.nav.nav-tabs
-  %li.active
+  %li{:class => active?(root_path)}
     = link_to 'Home', root_path
-  %li
+  %li{:class => active?(books_path)}
     = link_to 'Books', books_path
   %li.disabled
-    %a{:href => "#"} Rent History
+    %a{:href => "#"} Books Rent History
   %li.dropdown.pull-right
     %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
       Account

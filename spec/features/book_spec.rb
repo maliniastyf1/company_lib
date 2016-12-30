@@ -1,21 +1,33 @@
   require 'rails_helper'
 
   describe 'navigate' do
+    before do
+      user = User.create(email: "adam@test.com", password: "qwerty", password_confirmation: "qwerty", first_name: "Adam", last_name: "Malyn")
+      login_as(user, :scope => :user)
+    end
     describe 'index' do
-      it 'can be reached successfully' do
+      before do
         visit books_path
+      end
+      it 'can be reached successfully' do
         expect(page.status_code).to eq(200)
       end
       it 'has a title of Books' do
-        visit books_path
         expect(page).to have_content(/Books/)
+      end
+
+      it 'has a list of books' do
+        book1 = Book.create(author: "Head1", title: "Ride1", description: "Criminal1")
+        book2 = Book.create(author: "Head2", title: "Ride2", description: "Criminal2")
+        visit books_path
+
+        expect(page).to have_content(/Criminal1|Criminal2/)
+
       end
     end
 
     describe 'creation' do
       before do
-        user = User.create(email: "adam@test.com", password: "qwerty", password_confirmation: "qwerty", first_name: "Adam", last_name: "Malyn")
-        login_as(user, :scope => :user)
         visit new_book_path
       end
       it 'has a new form that can be reached' do
