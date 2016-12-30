@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4da594cf-d4d8-4625-8786-b9ca6fa5eca2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/books_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/books_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/books/_book.html.haml" afterPath="$PROJECT_DIR$/app/views/books/_book.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/features/book_spec.rb" afterPath="$PROJECT_DIR$/spec/features/book_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/books/_form.html.haml" afterPath="$PROJECT_DIR$/app/views/books/_form.html.haml" />
     </list>
     <ignored path="company_lib.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,11 +52,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_book.html.haml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_book.html.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/books/_book.html.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
               <caret line="14" column="130" selection-start-line="14" selection-start-column="130" selection-end-line="14" selection-end-column="130" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form.html.haml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/books/_form.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -133,13 +141,13 @@
         <option value="$PROJECT_DIR$/spec/factories/users.rb" />
         <option value="$PROJECT_DIR$/spec/factories/books.rb" />
         <option value="$PROJECT_DIR$/spec/models/book_spec.rb" />
-        <option value="$PROJECT_DIR$/app/views/books/_form.html.haml" />
         <option value="$PROJECT_DIR$/app/views/books/edit.html.haml" />
         <option value="$PROJECT_DIR$/app/views/books/new.html.haml" />
         <option value="$PROJECT_DIR$/app/views/shared/_nav.html.haml" />
         <option value="$PROJECT_DIR$/spec/features/book_spec.rb" />
         <option value="$PROJECT_DIR$/app/controllers/books_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/books/_book.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/books/_form.html.haml" />
       </list>
     </option>
   </component>
@@ -611,12 +619,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1483033462730</updated>
-      <workItem from="1483033465281" duration="31861000" />
+      <workItem from="1483033465281" duration="32611000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31861000" />
+    <option name="totallyTimeSpent" value="32611000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
@@ -914,14 +922,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/books/_form.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/books/edit.html.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -982,6 +982,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="130" selection-start-line="14" selection-start-column="130" selection-end-line="14" selection-end-column="130" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/books/_form.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
           <folding />
         </state>
       </provider>
