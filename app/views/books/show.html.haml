@@ -1,23 +1,5 @@
 %h1 Book Details
 = image_tag("book.png", :alt => "rss feed")
 
-.container-fluid
-  .row
-    .col-md-12
-    %dl
-      %dt
-        Author
-      %dd
-        = @book.author
-      %dt
-        Title
-      %dd
-        = @book.title
-      %dt
-        Description
-      %dd
-        = @book.description
-      %dt
-        Status
-      %dd
-        = @book.status_info
+
+= render 'book_info'
