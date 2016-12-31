@@ -32,3 +32,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem "haml-rails", "~> 0.9"
 gem "gritter", "1.2.0"
+gem 'will_paginate', '~> 3.1.1'
