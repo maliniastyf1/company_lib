@@ -1,5 +1,7 @@
 %h1 Book Details
+
 = image_tag("book.png", :alt => "rss feed")
 
-
 = render 'book_info'
+%tr
+= link_to 'Back', books_path, class: 'btn btn-primary'
