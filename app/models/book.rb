@@ -8,4 +8,10 @@ class Book < ApplicationRecord
     status == false ? "Available" : "Rented"
   end
 
+  def rent_book
+    @book = Book.find(params(:id))
+    @book.status = "Rented"
+    @book.rent_history.user_id = current_user
+  end
+
 end
