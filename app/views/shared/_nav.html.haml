@@ -8,8 +8,8 @@
       = link_to 'Books', books_path
     %li{:class => active?(new_book_path)}
       = link_to 'Add New Book', new_book_path, id: 'new_book_from_nav'
-    %li.disabled
-      %a{:href => "#"} Books Rent History
+    %li{:class => active?(rents_path)}
+      = link_to 'Books Rent History', rents_path
     %li.dropdown.pull-right
       %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
         Account
