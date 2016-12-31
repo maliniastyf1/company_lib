@@ -1,26 +1,23 @@
 %h1 Book Details
-%table.table
-  %thead
-    %tr
-      %th
-        \#
-      %th
+= image_tag("book.png", :alt => "rss feed")
+
+.container-fluid
+  .row
+    .col-md-12
+    %dl
+      %dt
         Author
-      %th
+      %dd
+        = @book.author
+      %dt
         Title
-      %th
+      %dd
+        = @book.title
+      %dt
         Description
-      %th
+      %dd
+        = @book.description
+      %dt
         Status
-  %tbody
-  %tr
-    %td
-      = @book.id
-    %td
-      = @book.author
-    %td
-      = @book.title
-    %td
-      = @book.description
-    %td
-      = @book.status_info
+      %dd
+        = @book.status_info
