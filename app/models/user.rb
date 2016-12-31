@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :rent_histories
-  has_many :books, :through => :rent_histories
+  has_many :rents
+  has_many :books, :through => :rents
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

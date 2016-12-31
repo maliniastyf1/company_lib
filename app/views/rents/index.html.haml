@@ -1,0 +1,23 @@
+%h1 Rent History
+
+%table.table
+  %thead
+    %tr
+      %th
+        Author
+      %th
+        Title
+      %th
+        User e-mail
+      %th
+        Date of rent
+  %tbody
+    .digg_pagination
+      = will_paginate @rents
+
+    = render @rents
+
+
+
+
+
