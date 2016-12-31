@@ -10,7 +10,6 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
-    @book.user_ids = current_user.id
     if @book.save
       redirect_to @book, notice: "Your book was added successfully"
     else

@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :rent_history do
+  factory :rents do
     user nil
     book nil
   end
