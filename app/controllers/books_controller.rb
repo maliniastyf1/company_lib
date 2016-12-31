@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   def index
-    @books = Book.paginate(:page => params[:page], :per_page => 15)
+    @books = Book.paginate(:page => params[:page], :per_page => 10)
   end
 
   def new
@@ -33,7 +33,7 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    @book.delete
+    Book.find(params[:id]).destroy
     redirect_to books_path, notice: "Your book was deleted successfully"
   end
 
