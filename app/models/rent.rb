@@ -4,5 +4,5 @@ class Rent < ApplicationRecord
 
   validates_presence_of :start_date, :end_date, :book_id, :user_id
   validates_with RentDateValidator, if: :start_date && :end_date
-  
+
 end

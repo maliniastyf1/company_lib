@@ -5,12 +5,12 @@ class Book < ApplicationRecord
   validates_presence_of :author, :title, :description
 
   def status_info
-    status == false ? "Available" : "Rented"
+    is_rented == false ? "Available" : "Rented"
   end
 
   def is_rented_by_current_user(current_user)
     rents = Rent.find_by_sql("SELECT * FROM rents WHERE rents.book_id = #{self.id} AND rents.user_id = #{current_user.id}")
-    rents.count > 0 && self.status == true
+    rents.count > 0 && self.is_rented == true
   end
 
 end

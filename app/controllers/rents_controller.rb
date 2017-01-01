@@ -8,7 +8,7 @@ class RentsController < ApplicationController
     @rent = Rent.new(rent_params)
     @book = Book.find(rent_params[:book_id])
     if @rent.save
-      @book.update(status: true)
+      @book.update(is_rented: true)
       redirect_to books_path, notice: "Book was rented successfully"
     else
       validation_errors(@rent)

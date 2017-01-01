@@ -30,7 +30,7 @@ class BooksController < ApplicationController
 
   def return_book
     @book = Book.find(params[:book_id])
-    @book.update(status: false)
+    @book.update(is_rented: false)
     redirect_to books_path, notice: "Book was returned successfully"
   end
 
