@@ -1,0 +1,22 @@
+%h1 Rent Book
+
+
+= render 'shared/book_info'
+
+= form_for @rent, {:class => "form-horizontal"} do |f|
+  - if @rent.errors.any?
+    - @rent.errors.full_messages.each do |error|
+      = js add_gritter(error, title: "Company Library", sticky: false)
+  .form-group
+  = f.label :start_date, {:class => "col-md-12" }
+  = f.date_field :start_date, {:class => "col-xs-6.form-control"}
+
+  .form-group
+  = f.label :end_date, {:class => "col-md-12" }
+  = f.date_field :end_date, {:class => "col-xs-4.form-control"}
+
+  = f.hidden_field :user_id, value: @rent.user.id
+  = f.hidden_field :book_id, value: @rent.book.id
+
+  .form-group
+  = f.submit 'Save', class: 'btn btn-primary'
