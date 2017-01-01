@@ -36,6 +36,13 @@ class BooksController < ApplicationController
     redirect_to books_path, notice: "Your book was deleted successfully"
   end
 
+  def show_book_to_rent
+    @book = Book.find(params[:book_id])
+    @rent = Rent.new
+    @rent.user = current_user
+    @rent.book = @book
+  end
+
   private
 
   def book_params

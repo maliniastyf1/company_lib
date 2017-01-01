@@ -8,7 +8,7 @@
   %td
     = book.status_info
   %td.btn-group
-    = link_to 'Rent Book', new_rent_path, id: "new_rent_path(#{book.id})", class: 'btn btn-primary'
+    = link_to 'Rent Book', "rents/#{book.id}", id: "'rents/(#{book.id})", class: 'btn btn-primary'
 
     = link_to 'Details', book_path(book), id: "book_path(#{book.id})", class: 'btn'
 

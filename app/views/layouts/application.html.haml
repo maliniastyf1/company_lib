@@ -12,4 +12,9 @@
         .col-md-12
           = render 'shared/nav'
           = yield
-          = js add_gritter(flash[:notice], title: "Company Lib", sticky: false, time: 10000)
+          - if flash[:alert]
+            = js add_gritter(flash[:alert], title: "Company Library Alert", sticky: false)
+          - elsif flash[:error]
+            = js add_gritter(flash[:error], title: "Company Library Error", sticky: false)
+          - else
+            = js add_gritter(flash[:notice], title: "Company Library Notice", sticky: false)
