@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   devise_for :users
   root 'static#homepage'
   get 'rents/:book_id', :to => 'rents#show_book_to_rent'
+  put 'books/:book_id/return_book', :to => 'books#return_book'
 
 end

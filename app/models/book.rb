@@ -8,10 +8,9 @@ class Book < ApplicationRecord
     status == false ? "Available" : "Rented"
   end
 
-  def rent_book
-    @book = Book.find(params(:id))
-    @book.status = "Rented"
-    @book.rent_history.user_id = current_user
+  def is_rented_by_current_user(current_user)
+    rents = Rent.find_by_sql("SELECT * FROM rents WHERE rents.book_id = #{self.id} AND rents.user_id = #{current_user.id}")
+    rents.count > 0 && self.status == true
   end
 
 end

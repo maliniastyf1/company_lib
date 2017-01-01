@@ -28,6 +28,12 @@ class BooksController < ApplicationController
     end
   end
 
+  def return_book
+    @book = Book.find(params[:book_id])
+    @book.update(status: false)
+    redirect_to books_path, notice: "Book was returned successfully"
+  end
+
   def show
   end
 

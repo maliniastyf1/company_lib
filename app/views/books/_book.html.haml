@@ -8,7 +8,10 @@
   %td
     = book.status_info
   %td.btn-group
-    = link_to 'Rent Book', "rents/#{book.id}", id: "'rents/(#{book.id})", class: 'btn btn-primary'
+    - if book.is_rented_by_current_user(current_user)
+      = link_to 'Return Book', "books/#{book.id}/return_book", method: :put, id: "'books/(#{book.id})/return_book", class: 'btn btn-primary'
+    - else
+      = link_to 'Rent Book', "rents/#{book.id}",  id: "'rents/(#{book.id})",disabled: book.status, class: 'btn btn-primary'
 
     = link_to 'Details', book_path(book), id: "book_path(#{book.id})", class: 'btn'
 
